@@ -7,7 +7,7 @@ open Suave.Successful
 open Suave.Json
 
 let add x y = x+y
-let result x = sprintf "{ \"result\":  %s ; \"from\": \"F# services\" }" x
+let result x = sprintf "{ \"result\":  %s , \"from\": \"F# services\" }" x
 
 let app =
   choose
