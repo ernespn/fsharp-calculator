@@ -5,14 +5,17 @@ open Suave.Filters
 open Suave.Operators
 open Suave.Successful
 open Suave.Json
+open Newtonsoft.Json
 
 let add x y = x+y
-let result x = sprintf "{ \"result\":  %s , \"from\": \"F# services\" }" x
+type result = { value : int ; from : string }
+let value x = { value = x ; from = "F# services" }
 
 let app =
   choose
     [ GET >=> choose
-        [   pathScan "/add/%d/%d" (fun (a,b) -> OK ((add a b).ToString() |> result )) 
+        [   pathScan "/add/%d/%d" (fun (a,b) -> OK ( JsonConvert.SerializeObject (value (add a b)) )) 
+            >=> Writers.setMimeType "application/json; charset=utf-8"
             ]
       POST >=> choose
         [ path "/hello" >=> OK "Hello POST"
