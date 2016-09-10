@@ -8,8 +8,8 @@ open Suave.Json
 open Newtonsoft.Json
 
 let add x y = x+y
-type result = { value : int ; from : string }
-let value x = { value = x ; from = "F# services" }
+type result = { result : int ; from : string }
+let value x = { result = x ; from = "F# services" }
 
 let app =
   choose
