@@ -6,10 +6,8 @@ open Suave.Operators
 open Suave.Successful
 open Suave.Json
 open Newtonsoft.Json
+open Calculator
 
-let add x y = x+y
-type result = { result : int ; from : string }
-let value x = { result = x ; from = "F# services" }
 
 let app =
   choose

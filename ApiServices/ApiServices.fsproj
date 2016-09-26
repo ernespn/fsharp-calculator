@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>75a07d9e-5b59-4bad-a1a2-ec29554964b6</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>calculator</RootNamespace>
-    <AssemblyName>Calculator</AssemblyName>
+    <ProjectGuid>25b3f563-93dc-498d-9dce-062f63709f82</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ApiServices</RootNamespace>
+    <AssemblyName>ApiServices</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>calculator</Name>
+    <Name>ApiServices</Name>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,7 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Debug\calculator.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\ApiServices.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DocumentationFile>bin\Release\calculator.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\ApiServices.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
@@ -55,16 +55,15 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="Calculator.fs" />
+    <Compile Include="Program.fs" />
     <None Include="App.config" />
-    <None Include="packages.config" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Core">
       <HintPath>..\packages\FSharp.Core.3.1.2.5\lib\net40\FSharp.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FSharp.Data.TypeProviders" />
     <Reference Include="mscorlib" />
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -76,9 +75,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\calculator\calculator.fsproj">
+      <Name>calculator</Name>
+      <Project>{75a07d9e-5b59-4bad-a1a2-ec29554964b6}</Project>
+      <Private>True</Private>
+    </ProjectReference>
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
