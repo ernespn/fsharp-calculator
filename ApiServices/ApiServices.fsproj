@@ -76,8 +76,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\calculator\calculator.fsproj">
       <Name>calculator</Name>
       <Project>{75a07d9e-5b59-4bad-a1a2-ec29554964b6}</Project>
