@@ -12,5 +12,5 @@ module calculatorTest =
     [<Test>]
     let ``When always return from clause f# services and the value passed``() =
         let result = value 3 
-        Assert.AreEqual(3, result.value)
+        Assert.AreEqual(3, result.result)
         Assert.AreEqual("F# services", result.from)
