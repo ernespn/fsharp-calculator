@@ -29,5 +29,5 @@ dependencies:
 
 test:
     override:
-        - xbuild /property:Configuration=Debug /property:OutDir=/usr/src/app/test/
-        - nunit-console /usr/src/app/test/calculatorTest.dll
+        - xbuild /property:Configuration=Debug /property:OutDir=/home/ubuntu/fsharp-calculator/test/
+        - nunit-console /home/ubuntu/fsharp-calculator/test/calculatorTest.dll
