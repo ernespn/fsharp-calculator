@@ -28,5 +28,5 @@ dependencies:
 
 test:
     override:
-        - xbuild /p:Configuration=Debug calculator.sln
-        - nunit-console calculatorTest/bin/Debug/calculatorTest.dll
+        - xbuild /property:Configuration=Debug /property:OutDir=/usr/src/app/test/
+        - nunit-console test/calculatorTest.dll
