@@ -19,6 +19,7 @@ dependencies:
         - sudo apt-get update
         # http://www.mono-project.com/docs/getting-started/install/linux/#usage
         - sudo apt-get install -y mono-complete
+        - sudo apt-get install -y fsharp
         - sudo apt-get install -y referenceassemblies-pcl
         - sudo apt-get install -y ca-certificates-mono
         - sudo apt-get install -y nunit-console
@@ -29,4 +30,4 @@ dependencies:
 test:
     override:
         - xbuild /property:Configuration=Debug /property:OutDir=/usr/src/app/test/
-        - nunit-console test/calculatorTest.dll
+        - nunit-console /usr/src/app/test/calculatorTest.dll
